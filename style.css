@@ -29,9 +29,8 @@
 
 /*=============== BASE ===============*/
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+
+    align-self: center;
     font-family: "montserrat", sans-serif;
 }
 
@@ -45,10 +44,7 @@ body {
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-    max-width: 1120px;
-    margin-inline: 1.5rem;
-}
+
 
 .main {
     overflow: hidden;
@@ -59,7 +55,7 @@ body {
 .header__title {
     text-align: center;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .header__education {
@@ -71,8 +67,29 @@ body {
 }
 
 .header__description {
+    font-weight: var(--font-medium);
     padding: 0 50px 0 50px;
-    font-weight: var(--font-medium)
+}
+
+/*=============== VIDEO ===============*/
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+@media screen and (max-width: 320px) {
+    .video {
+        padding-bottom: 80%;
+    }
 }
 
 /*=============== ANIMATION ===============*/
@@ -80,7 +97,6 @@ body {
     background-color: #102044;
     color: #fff;
     border: 2px #4e56a9 solid;
-    padding: 10px;
 }
 
 .anim-1:hover {
@@ -142,16 +158,10 @@ body {
     color: black;
 }
 
-/*=============== VIDEO ===============*/
-.video {
-    text-align: center;
-    padding-top: 50px;
-}
-
 /* ============== LIST =============== */
 .list-title {
     text-align: center;
-    margin-top: 0;
+    margin: 0;
     padding: 20px 0 10px 0;
     font-style: var(--font-medium);
 }
@@ -159,19 +169,27 @@ body {
 .list-1,
 .list-2 {
     text-decoration: dashed;
-    padding: 20px;
+    padding: 0px;
     font-style: var(--font-regular);
 }
 
+.list-1 h2 {
+    padding: 0 0 0 50px;
+}
+
+.list-2 h2 {
+    padding: 0 0 0 50px;
+}
+
 li {
-    padding: 0 20px 0 0;
+    padding: 0 10px 0 100px;
 }
 
 /*=============== TEXT ===============*/
 .text {
     text-align: center;
     margin: 0;
-    padding: 20px 0 10px 0;
+    padding: 20px 0 50px 0;
 }
 
 .text-1 {
@@ -185,7 +203,7 @@ li {
 .warning {
     display: flex;
     background-color: #fff;
-
+    padding:10%;
 }
 
 .warning-1 {
@@ -193,7 +211,7 @@ li {
     background-color: rgb(112, 101, 122);
     border: 10px rgb(42, 108, 143) solid;
     margin: 0;
-    padding: 50px;
+    padding: 0px;
 }
 
 .warning-1:hover {
@@ -203,21 +221,31 @@ li {
 
 /*=============== FEEDBACK ===============*/
 .feedback {
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin: 0;
     padding: 0 50px 10px 50px;
 }
-
 .feedback-1,
 .feedback-2,
 .feedback-3,
 .feedback-4 {
     text-align: left;
-    margin: 0;
-    padding: 50px;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding: 0 50px 0 50px;
 }
 
-/* =============== MEN =============== */
+
+/* =============== FOOTER =============== */
+footer{
+    text-align: left;
+    padding-left: 10px;
+}
+footer h1{
+    text-align: center;
+}
 .img-men {
     margin: 20px auto;
     width: 80%;
@@ -227,60 +255,49 @@ img {
     max-width: 320px;
     float: left;
     margin: 0;
+    padding: 10px;
 }
 
+@media screen and (min-width: 320px) {
+    img {
+        width: 100%;
+    }
+}
+
+.text-box {
+    margin: 0;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
 
 /* ===============BUY ===============  */
 .buy {
     text-align: center;
-    margin: 0;
-    padding: 100px;
 }
 
 .buy h1 {
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 0;
+    padding: auto;
 }
 
 .buy p {
-    margin: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 /*=============== BUTTON ===============*/
+.buy .botton{
+    text-align: center;
+}
 .button {
     background-color: var(--first-color);
-    margin: 20px;
     padding: 1rem 1.75rem;
     border-radius: 4rem;
     font-weight: var(--font-medium);
 }
 
-button:hover{
+button:hover {
     color: #fff;
-}
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 320px) {
-    .header__container {
-        width: 90%;
-    }
-}
-
-/* For medium devices */
-@media screen and (min-width:576px) {
-
-    .main__container,
-    .header__container,
-    .main__container,
-    .footer__container {
-        grid-template-columns: 360px;
-        justify-content: center;
-    }
-}
-
-@media screen and(min-width: 768px) {
-    .header__container {
-        width: 55%;
-    }
 }
